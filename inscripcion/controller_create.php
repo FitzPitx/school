@@ -36,7 +36,7 @@ if($contador>0){
     $ano_for = $_POST['ano_for'];
     // $especialidad = $_POST['especialidad'];
     $tipo_matriculacion = $_POST['tipo_matriculacion'];
-    $nro_deposito_matricual = $_POST['nro_deposito_matricual'];
+    $nro_deposito_matricula = $_POST['nro_deposito_matricual'];
 
 
 
@@ -71,7 +71,7 @@ VALUES ( :apellidos_nombres,:ci,:celular,:correo,:ano_for,:tipo_matriculacion,:n
     $sentencia->bindParam(':ano_for',$ano_for);
     // $sentencia->bindParam(':especialidad',$especialidad);
     $sentencia->bindParam(':tipo_matriculacion',$tipo_matriculacion);
-    $sentencia->bindParam(':nro_deposito_matricual',$nro_deposito_matricual);
+    $sentencia->bindParam(':nro_deposito_matricual',$nro_deposito_matricula);
     $sentencia->bindParam(':foto_deposito_matricula',$filename1);
     $sentencia->bindParam(':documentos',$filename3);
     $sentencia->bindParam('fyh_creacion',$fechaHora);
