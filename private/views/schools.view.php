@@ -4,13 +4,13 @@
 	<div class="container-fluid p-4 shadow mx-auto" style="max-width: 1000px;">
 		<?php $this->view('includes/crumbs',['crumbs'=>$crumbs])?>
 
-			<h5>Schools</h5>
+			<h5>Colegios</h5>
 		<div class="card-group justify-content-center">
 			<table class="table table-striped table-hover">
-				<tr><th></th><th>School</th><th>Created by</th><th>Date</th>
+				<tr><th></th><th>Colegio</th><th>Creado por</th><th>Fecha</th>
 					<th>
 						<a href="<?=ROOT?>/schools/add">
-							<button class="btn btn-sm btn-primary"><i class="fa fa-plus"></i>Add New</button>
+							<button class="btn btn-sm btn-primary"><i class="fa fa-plus"></i>Añadir nuevo colegio</button>
 						</a>
 					</th>
 				</tr>
@@ -20,7 +20,7 @@
 					 
 					 <tr>
 					 	<td><button class="btn btn-sm btn-primary"><i class="fa fa-chevron-right"></i></button></td>
-					 	<td><?=$row->school?></td><td><?=$row->user->firstname?> <?=$row->user->lastname?></td><td><?=get_date($row->date)?></td>
+					 	<td><?=$row->school?></td><td><?=$row->user->firstname?> <?=$row->user->lastname?></td><td><?= date('Y/m/d'); ?></td>
 
 					 	<td>
 					 		<a href="<?=ROOT?>/schools/edit/<?=$row->id?>">
@@ -32,7 +32,7 @@
 					 		</a>
 
 					 		<a href="<?=ROOT?>/switch_school/<?=$row->id?>">
-					 			<button class="btn-sm btn btn-success">Switch to<i class="fa fa-chevron-right"></i></button>
+					 			<button class="btn-sm btn btn-success">Cambiar a<i class="fa fa-chevron-right"></i></button>
 					 		</a>
 
 					 		

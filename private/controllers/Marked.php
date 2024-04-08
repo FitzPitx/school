@@ -68,7 +68,8 @@ class Marked extends Controller
 
 		//get all submitted tests
 		$marked = array();
-		if(count($data) > 0){
+		if(is_array($data) && count($data) > 0){
+
 
 			$all_tests = array_column($data, 'test_id');
 			$all_tests_string = "'".implode("','", $all_tests)."'";
@@ -90,7 +91,7 @@ class Marked extends Controller
 			
 		}
 			
-		$crumbs[] = ['Dashboard',''];
+		$crumbs[] = ['Panel principal',''];
 		$crumbs[] = ['To Mark','to_mark'];
 
 		$this->view('marked',[

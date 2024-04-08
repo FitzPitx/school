@@ -18,7 +18,7 @@ class Single_test extends Controller
 		$tests = new Tests_model();
 		$row = $tests->first('test_id',$id);
 
-		$crumbs[] = ['Dashboard',''];
+		$crumbs[] = ['Panel principal',''];
 		$crumbs[] = ['tests','tests'];
 
 		if($row){
@@ -87,7 +87,7 @@ class Single_test extends Controller
 		$tests = new Tests_model();
 		$row = $tests->first('test_id',$id);
 
-		$crumbs[] = ['Dashboard',''];
+		$crumbs[] = ['Panel principal',''];
 		$crumbs[] = ['tests','tests'];
 
 		if($row){
@@ -171,7 +171,7 @@ class Single_test extends Controller
 		$tests = new Tests_model();
 		$row = $tests->first('test_id',$id);
 
-		$crumbs[] = ['Dashboard',''];
+		$crumbs[] = ['Panel principal',''];
 		$crumbs[] = ['tests','tests'];
 
 		if($row){
@@ -263,7 +263,7 @@ class Single_test extends Controller
 		$tests = new Tests_model();
 		$row = $tests->first('test_id',$id);
 
-		$crumbs[] = ['Dashboard',''];
+		$crumbs[] = ['Panel principal',''];
 		$crumbs[] = ['tests','tests'];
 
 		if($row){

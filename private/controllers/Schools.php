@@ -18,8 +18,8 @@ class Schools extends Controller
  
 		$data = $school->findAll();
 
-		$crumbs[] = ['Dashboard',''];
-		$crumbs[] = ['Schools','schools'];
+		$crumbs[] = ['Panel principal',''];
+		$crumbs[] = ['Colegios','Schools'];
 
 		if(Auth::access('super_admin')){
 			$this->view('schools',[
@@ -58,9 +58,9 @@ class Schools extends Controller
  			}
  		}
 
- 		$crumbs[] = ['Dashboard',''];
-		$crumbs[] = ['Schools','schools'];
-		$crumbs[] = ['Add','schools/add'];
+ 		$crumbs[] = ['Panel principal',''];
+		$crumbs[] = ['Colegios','Schools'];
+		$crumbs[] = ['Añadir','schools/add'];
 
 		if(Auth::access('super_admin')){
 			$this->view('schools.add',[
@@ -101,9 +101,9 @@ class Schools extends Controller
 
  		$row = $school->where('id',$id);
 
- 		$crumbs[] = ['Dashboard',''];
-		$crumbs[] = ['Schools','schools'];
-		$crumbs[] = ['Edit','schools/edit'];
+ 		$crumbs[] = ['Panel principal',''];
+		$crumbs[] = ['Colegios','Schools'];
+		$crumbs[] = ['Editar','schools/edit'];
 
 		if(Auth::access('super_admin')){
 
@@ -139,9 +139,9 @@ class Schools extends Controller
 
  		$row = $school->where('id',$id);
 
- 		$crumbs[] = ['Dashboard',''];
-		$crumbs[] = ['Schools','schools'];
-		$crumbs[] = ['Delete','schools/delete'];
+ 		$crumbs[] = ['Panel principal',''];
+		$crumbs[] = ['Colegios','schools'];
+		$crumbs[] = ['Eliminar','schools/delete'];
 
 		if(Auth::access('super_admin')){
 			$this->view('schools.delete',[

@@ -56,7 +56,7 @@ class Classes extends Controller
  
  		}
 
-		$crumbs[] = ['Dashboard',''];
+		$crumbs[] = ['Panel principal',''];
 		$crumbs[] = ['Classes','classes'];
 
 		$this->view('classes',[
@@ -92,7 +92,7 @@ class Classes extends Controller
  			}
  		}
 
- 		$crumbs[] = ['Dashboard',''];
+ 		$crumbs[] = ['Panel principal',''];
 		$crumbs[] = ['Classes','classes'];
 		$crumbs[] = ['Add','classes/add'];
 
@@ -131,7 +131,7 @@ class Classes extends Controller
  		}
 
 
- 		$crumbs[] = ['Dashboard',''];
+ 		$crumbs[] = ['Panel principal',''];
 		$crumbs[] = ['Classes','classes'];
 		$crumbs[] = ['Edit','classes/edit'];
 
@@ -170,7 +170,7 @@ class Classes extends Controller
  		}
 
 
- 		$crumbs[] = ['Dashboard',''];
+ 		$crumbs[] = ['Panel principal',''];
 		$crumbs[] = ['Classes','classes'];
 		$crumbs[] = ['Delete','classes/delete'];
 

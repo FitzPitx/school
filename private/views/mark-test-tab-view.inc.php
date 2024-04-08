@@ -3,24 +3,24 @@
 <?php $marked_percentage = get_mark_percentage($row->test_id,$user_id)?>
 
 <div class="container-fluid text-center">
-	<div class="text-danger"><?=$percentage?>% Answered</div>
+	<div class="text-danger"><?=$percentage?>% Respondidas</div>
 	<div class="bg-primary" style="width: <?=$percentage?>%;height: 5px;"></div>
 
-	<div class="text-danger"><?=$marked_percentage?>% Marked</div>
+	<div class="text-danger"><?=$marked_percentage?>% Marcadas</div>
 	<div class="bg-primary" style="width: <?=$marked_percentage?>%;height: 5px;"></div>
 	
 	<?php if($answered_test_row):?>
 		<?php if($answered_test_row->submitted && !$marked):?>
-			<div class="text-success">This test has been submitted</div>
+			<div class="text-success">Este éxamen ha sido subido correctamente.</div>
 			<a onclick="unsubmit_test(event)" href="<?=ROOT?>/mark_test/<?=$row->test_id?>/<?=$answered_test_row->user_id?>/?unsubmit=true">
-				<button class="btn mx-1 btn-danger float-end">unSubmit Test</button>
+				<button class="btn mx-1 btn-danger float-end">Cancelar acción</button>
 			</a>
 			<a onclick="set_test_as_marked(event)" href="<?=ROOT?>/mark_test/<?=$row->test_id?>/<?=$answered_test_row->user_id?>/?set_marked=true">
-				<button class="btn mx-1 btn-secondary float-end">Set Test as Marked</button>
+				<button class="btn mx-1 btn-secondary float-end">Marcar éxamen válido</button>
 			</a>
 			
 			<a onclick="auto_mark(event)" href="<?=ROOT?>/mark_test/<?=$row->test_id?>/<?=$answered_test_row->user_id?>/?auto_mark=true">
-				<button class="btn mx-1 btn-warning float-end">Auto mark</button>
+				<button class="btn mx-1 btn-warning float-end">	Marca automáticak</button>
 			</a>
 			
 
@@ -33,14 +33,14 @@
 <?php if($marked):?>
 <center>
 	<?php $score_percentage = get_score_percentage($row->test_id,$user_id)?>
-	<small style="font-size:20px">Test Score:<br></small> <div style="font-size: 60px;margin-top: -20px;"><?=$score_percentage?>%</div>
+	<small style="font-size:20px">Púntaje del test:<br></small> <div style="font-size: 60px;margin-top: -20px;"><?=$score_percentage?>%</div>
 </center>
 <?php endif;?>
 
 <nav class="navbar">
 	<center>
-		<h5>Test Questions</h5>
-		<p><b>Total Questions:</b> <?=$total_questions?></p>
+		<h5>Preguntas del éxamen</h5>
+		<p><b>Preguntas totales:</b> <?=$total_questions?></p>
 	</center>
  
 </nav>
@@ -62,7 +62,7 @@
  
 		<div class="card mb-4 ">
 		  <div class="card-header">
-		    <span  class="bg-primary p-1 text-white rounded">Question #<?=$num?></span> <span class="badge bg-primary float-end p-2"><?=date("F jS, Y H:i:s a",strtotime($question->date))?></span>
+		    <span  class="bg-primary p-1 text-white rounded">Pregunta #<?=$num?></span> <span class="badge bg-primary float-end p-2"><?=date("F jS, Y H:i:s a",strtotime($question->date))?></span>
 		  </div>
 		  <div class="card-body">
 		    <h5 class="card-title"><?=esc($question->question)?></h5>
@@ -88,7 +88,7 @@
 
 		    		<div class="card" style="width: 18rem;">
 						  <div class="card-header">
-						    Select your answer
+						    Selecciona tu respuesta
 						  </div>
 						  <ul class="list-group list-group-flush">
 
@@ -106,18 +106,18 @@
 						</div>
 
 						<hr>
-		  				Teacher's mark:
+		  				Marca de profesor:
 		  				<?php if(!$marked):?>
 			  				<div class="form-check">
 							  <input <?=($mymark == 1) ? ' checked ':''?>  class="form-check-input" type="radio" name="<?=$question->id?>" value="1" id="flexRadioDefaultcorrect<?=$num?>">
 							  <label class="form-check-label" for="flexRadioDefaultcorrect<?=$num?>">
-							    Correct
+							    Correcto
 							  </label>
 							</div>
 							<div class="form-check">
 							  <input <?=($mymark == 2) ? ' checked ':''?>  class="form-check-input" type="radio" name="<?=$question->id?>" value="2" id="flexRadioDefaultwrong<?=$num?>">
 							  <label class="form-check-label" for="flexRadioDefaultwrong<?=$num?>">
-							    Wrong
+							    Erroeno
 							  </label>
 							</div>
 		    			<?php else:?>
@@ -129,20 +129,20 @@
 		    	<?php endif;?>
 
 		    <?php if($question->question_type != 'multiple'):?>
-  				<div>Answer: <?=$myanswer?></div>
+  				<div>Respuesta: <?=$myanswer?></div>
   				<hr>
-  				Teacher's mark:
+  				Marca de profesor:
   				<?php if(!$marked):?>
 	  				<div class="form-check">
 					  <input <?=($mymark == 1) ? ' checked ':''?> class="form-check-input" type="radio" name="<?=$question->id?>" value="1" id="flexRadioDefaultcorrect<?=$num?>">
 					  <label class="form-check-label" for="flexRadioDefaultcorrect<?=$num?>">
-					    Correct
+					   Correcto
 					  </label>
 					</div>
 					<div class="form-check">
 					  <input <?=($mymark == 2) ? ' checked ':''?> class="form-check-input" type="radio" name="<?=$question->id?>" value="2" id="flexRadioDefaultwrong<?=$num?>">
 					  <label class="form-check-label" for="flexRadioDefaultwrong<?=$num?>">
-					    Wrong
+					    Erroneo
 					  </label>
 					</div>
 				<?php else:?>
@@ -159,8 +159,8 @@
 
 	<?php if(!$marked):?>
 		<center>
-			<small>Click save marks before moving to another page to save</small><br>
-			<button class="btn btn-primary">Save Marks</button>
+			<small>Oprime guardar marcas antes de dirigirte a otra página para guardar</small><br>
+			<button class="btn btn-primary">Guardar marca</button>
 		</center>
 		</form>
 	<?php endif;?>

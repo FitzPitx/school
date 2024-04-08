@@ -25,7 +25,7 @@ public function index($id = '',$user_id = '')
 			'test_id' => $id,
 		]);
 
-		$crumbs[] = ['Dashboard',''];
+		$crumbs[] = ['Panel principal',''];
 		$crumbs[] = ['tests','tests'];
 
 		if($row){

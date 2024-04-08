@@ -30,7 +30,7 @@ class Login extends Controller
   			
  			}
   			
-  			$errors['email'] = "Wrong email or password";
+  			$errors['email'] = "Correo electrónico o contraseña incorrecta.";
 
  		}
 

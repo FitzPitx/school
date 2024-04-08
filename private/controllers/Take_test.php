@@ -25,7 +25,7 @@ class Take_test extends Controller
 			'test_id' => $id,
 		]);
 
-		$crumbs[] = ['Dashboard',''];
+		$crumbs[] = ['Panel principal',''];
 		$crumbs[] = ['tests','tests'];
 
 		if($row){

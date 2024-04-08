@@ -9,7 +9,7 @@
  
 
 			 <form method="post">
-			 	<h3>Edit School</h3>
+			 	<h3>Editar colegio</h3>
 
 			 	<?php if(count($errors) > 0):?>
 				<div class="alert alert-warning alert-dismissible fade show p-1" role="alert">
@@ -23,11 +23,11 @@
 				</div>
 				<?php endif;?>
 			
-			 	<input autofocus class="form-control" value="<?=get_var('school',$row[0]->school)?>" type="text" name="school" placeholder="School Name"><br><br>
-			 	<input class="btn btn-primary float-end" type="submit" value="Save">
+			 	<input autofocus class="form-control" value="<?=get_var('school',$row[0]->school)?>" type="text" name="school" placeholder="Nombre del colegio"><br><br>
+			 	<input class="btn btn-primary float-end" type="submit" value="Guardar">
 
 			 	<a href="<?=ROOT?>/schools">
-			 		<input class="btn btn-danger" type="button" value="Cancel">
+			 		<input class="btn btn-danger" type="button" value="Cancelar">
 			 	</a>
 			 </form>
 			
@@ -35,11 +35,11 @@
 		<?php else: ?>
 
 			<div style="text-align: center;">
-				<h3>That school was not found!</h3>
+				<h3>Este colegio no fue encontrado!</h3>
 				<div class="clearfix"></div>
 				<br><br>
 				<a href="<?=ROOT?>/schools">
-			 		<input class="btn btn-danger" type="button" value="Cancel">
+			 		<input class="btn btn-danger" type="button" value="Cancelar">
 			 	</a>
 		 	</div>
 		<?php endif; ?>

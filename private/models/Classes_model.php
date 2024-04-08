@@ -30,7 +30,7 @@ class Classes_model extends Model
         //check for class name
         if(empty($DATA['class']) || !preg_match('/^[a-z A-Z0-9]+$/', $DATA['class']))
         {
-            $this->errors['class'] = "Only letters & numbers allowed in class name";
+            $this->errors['class'] = "Ingresar únicamente número y letras, sin dejar en blanco el campo";
         }
  
         if(count($this->errors) == 0)

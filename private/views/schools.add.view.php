@@ -7,11 +7,11 @@
 		<div class="card-group justify-content-center">
  
 			 <form method="post">
-			 	<h3>Add New School</h3>
+			 	<h3>Añadir nuevo colegio</h3>
 
 			 	<?php if(count($errors) > 0):?>
 				<div class="alert alert-warning alert-dismissible fade show p-1" role="alert">
-				  <strong>Errors:</strong>
+				  <strong>Error:</strong>
 				   <?php foreach($errors as $error):?>
 				  	<br><?=$error?>
 				  <?php endforeach;?>
@@ -21,11 +21,11 @@
 				</div>
 				<?php endif;?>
 			
-			 	<input autofocus class="form-control" value="<?=get_var('school')?>" type="text" name="school" placeholder="School Name"><br><br>
-			 	<input class="btn btn-primary float-end" type="submit" value="Create">
+			 	<input autofocus class="form-control" value="<?=get_var('school')?>" type="text" name="school" placeholder="Nombre del colegio"><br><br>
+			 	<input class="btn btn-primary float-end" type="submit" value="Crear">
 
 			 	<a href="<?=ROOT?>/schools">
-			 		<input class="btn btn-danger" type="button" value="Cancel">
+			 		<input class="btn btn-danger" type="button" value="Cancelar">
 			 	</a>
 			 </form>
 		</div>

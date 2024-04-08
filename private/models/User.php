@@ -36,13 +36,13 @@ class User extends Model
         //check for first name
         if(empty($DATA['firstname']) || !preg_match('/^[a-zA-Z]+$/', $DATA['firstname']))
         {
-            $this->errors['firstname'] = "Only letters allowed in first name";
+            $this->errors['firstname'] = "Ingresa letras y sin dejar espacio en el espacio en el nombre.";
         }
 
         //check for last name
         if(empty($DATA['lastname']) || !preg_match('/^[a-zA-Z]+$/', $DATA['lastname']))
         {
-            $this->errors['lastname'] = "Only letters allowed in last name";
+            $this->errors['lastname'] = "Ingresar letras únicamente y sin dejar espacio en el campo apellido";
         }
 
         //check for email
@@ -55,12 +55,12 @@ class User extends Model
         if(trim($id) == ""){
             if($this->where('email',$DATA['email']))
             {
-                $this->errors['email'] = "That email is already in use";
+                $this->errors['email'] = "Este correo ya ha sido usado";
             }
         }else{
             if($this->query("select email from $this->table where email = :email && user_id != :id",['email'=>$DATA['email'],'id'=>$id]))
             {
-                $this->errors['email'] = "That email is already in use";
+                $this->errors['email'] = "Este correo está actualmente en uso";
             }
         }
 
@@ -69,13 +69,13 @@ class User extends Model
 
             if(empty($DATA['password']) || $DATA['password'] !== $DATA['password2'])
             {
-                $this->errors['password'] = "Passwords do not match";
+                $this->errors['password'] = "Negado, la contraseña no es la misma.";
             }
 
             //check for password length
             if(strlen($DATA['password']) < 8)
             {
-                $this->errors['password'] = "Password must be at least 8 characters long";
+                $this->errors['password'] = "La contraseña debe tener minimo 8 caracteres";
             }
         }
 
@@ -83,14 +83,14 @@ class User extends Model
         $genders = ['female','male'];
         if(empty($DATA['gender']) || !in_array($DATA['gender'], $genders))
         {
-            $this->errors['gender'] = "Gender is not valid";
+            $this->errors['gender'] = "Este género no es válido";
         }
 
         //check for gender
         $ranks = ['student','reception','lecturer','admin','super_admin'];
         if(empty($DATA['rank']) || !in_array($DATA['rank'], $ranks))
         {
-            $this->errors['rank'] = "Rank is not valid";
+            $this->errors['rank'] = "Este rango no es válido";
         }
 
 

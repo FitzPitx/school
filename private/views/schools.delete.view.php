@@ -9,14 +9,14 @@
  
 
 			 <form method="post">
-			 	<h3>Are you sure you want to delete?!</h3>
+			 	<h3>¿¡Estás seguro de eliminar este colegio!?</h3>
  
 			 	<input disabled autofocus class="form-control" value="<?=get_var('school',$row[0]->school)?>" type="text" name="school" placeholder="School Name"><br><br>
 			 	<input type="hidden" name="id">
-			 	<input class="btn btn-danger float-end" type="submit" value="Delete">
+			 	<input class="btn btn-danger float-end" type="submit" value="Eliminar">
 
 			 	<a href="<?=ROOT?>/schools">
-			 		<input class="btn btn-success" type="button" value="Cancel">
+			 		<input class="btn btn-success" type="button" value="Cancelar">
 			 	</a>
 			 </form>
 			
@@ -24,11 +24,11 @@
 		<?php else: ?>
 
 			<div style="text-align: center;">
-				<h3>That school was not found!</h3>
+				<h3>Este colegio no fue encontrado</h3>
 				<div class="clearfix"></div>
 				<br><br>
 				<a href="<?=ROOT?>/schools">
-			 		<input class="btn btn-danger" type="button" value="Cancel">
+			 		<input class="btn btn-danger" type="button" value="Cancelar">
 			 	</a>
 		 	</div>
 		<?php endif; ?>

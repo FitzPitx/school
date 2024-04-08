@@ -34,7 +34,7 @@ class Tests_model extends Model
         //check for test name
         if(empty($DATA['test']) || !preg_match('/^[a-z A-Z0-9]+$/', $DATA['test']))
         {
-            $this->errors['test'] = "Only letters & numbers allowed in test name";
+            $this->errors['test'] = "Ingresar únicamente letras para el nombre del test";
         }
  
         if(count($this->errors) == 0)

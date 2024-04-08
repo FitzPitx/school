@@ -4,11 +4,11 @@
 
 
 			 <form method="post">
-			 	<h3>Are you sure you want to delete this Test permanently??!!</h3>
+			 	<h3>¿Estás seguro de eliminar este test?</h3>
 
 			 	<?php if(count($errors) > 0):?>
 				<div class="alert alert-warning alert-dismissible fade show p-1" role="alert">
-				  <strong>Errors:</strong>
+				  <strong>Error:</strong>
 				   <?php foreach($errors as $error):?>
 				  	<br><?=$error?>
 				  <?php endforeach;?>

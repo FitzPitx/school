@@ -9,7 +9,7 @@
  
 
 			 <form method="post">
-			 	<h3>Are you sure you want to delete?!</h3>
+			 	<h3>¿Estás seguro de eliminar para siempre esta clase?</h3>
  
 			 	<input disabled autofocus class="form-control" value="<?=get_var('class',$row[0]->class)?>" type="text" name="class" placeholder="School Name"><br><br>
 			 	<input type="hidden" name="id">
@@ -24,7 +24,7 @@
 		<?php else: ?>
 
 			<div style="text-align: center;">
-				<h3>That class was not found!</h3>
+				<h3>Esta clase no fue encontrada!</h3>
 				<div class="clearfix"></div>
 				<br><br>
 				<a href="<?=ROOT?>/classes">

@@ -28,7 +28,7 @@ class School extends Model
         //check for school name
         if(empty($DATA['school']) || !preg_match('/^[a-zA-Z ]+$/', $DATA['school']))
         {
-            $this->errors['school'] = "Only letters & spaces allowed in school name";
+            $this->errors['school'] = "Ingresar únicamente letras y sin dejar en blanco el campo";
         }
  
         if(count($this->errors) == 0)
