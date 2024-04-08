@@ -1,5 +1,5 @@
 <?php
-
+global $pdo;
 define('SERVIDOR','localhost');
 define('PUERTO', '3306'); // Puerto de MySQL
 define('USUARIO','root');
@@ -9,9 +9,7 @@ define('BD','matriculacion');
 $servidor = "mysql:host=".SERVIDOR.";port=".PUERTO.";dbname=".BD;
 try {
     $pdo = new PDO($servidor, USUARIO, PASSWORD, array(PDO::MYSQL_ATTR_INIT_COMMAND=>"SET NAMES utf8"));
-    //echo "<script>alert('Conexión exitosa a la base de datos');</script>";
 } catch (PDOException $e) {
-    // echo "fr";
     echo "<script>alert('Error al conectar con la base de datos');</script>";
 }
 $URL='http://localhost/inscripcion';

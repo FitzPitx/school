@@ -9,37 +9,29 @@
 
 include('../app/config_tcpdf.php');
 include('../app/TCPDF-master/tcpdf.php');
-
-
 header("Content-type:application/pdf");
-
-
 
 // create new PDF document
 $pdf = new TCPDF('P', 'mm', 'Letter', true, 'UTF-8', false);
-$pdf->SetTitle('Ministerio de Educación'); //Titlo del pdf
+$pdf->SetTitle('Matriculación al sistema estudiantil'); //Titulo del pdf
 $pdf->setPrintHeader(false); //No se imprime cabecera
 $pdf->setPrintFooter(false); //No se imprime pie de pagina
 $pdf->SetMargins(25, 20, 15, 20); //Se define margenes izquierdo, alto, derecho
 $pdf->SetAutoPageBreak(true, 0); //Se define un salto de pagina con un limite de pie de pagina
-// set a barcode on the page footer
-$pdf->setBarcode(date('Y-m-d H:i:s'));
-$pdf->SetFont('helvetica', '', 11);
+
 // add a page
 $pdf->AddPage();
 
 
-
-
 $ci_estudiante = $_GET['ci'];
-
 
 $query_datos = $pdo->prepare("SELECT * FROM tb_matriculacion WHERE ci = '$ci_estudiante'  ");
 $query_datos->execute();
 $query_datos = $query_datos->fetchAll(PDO::FETCH_ASSOC);
 foreach ($query_datos as $dato) {
 
-    $apellidos_nombres = $dato['apellidos_nombres'];
+    $nombre = $dato['nombre'];
+    $apellido = $dato['apellido'];
     $ci = $dato['ci'];
     $celular = $dato['celular'];
     $correo = $dato['correo'];
@@ -62,6 +54,7 @@ $estado_del_registro = "1";
 $dia_actual = date("d");
 $mes = date("m");
 $ano = date("Y");
+
 
 if ($mes == "01") {
     $mes = "enero";
@@ -114,14 +107,11 @@ $style = array(
     'module_height' => 1 // height of a single module in points
 );
 
-$QR = 'Este documento pertenece al estudiante' . $apellidos_nombres . ' del ' . $ano_for . ' que se registro en fecha' . $fyh_creacion;
-$pdf->write2DBarcode($QR, 'QRCODE,L', 160, 125, 30, 30, $style);
+$QR = 'Este documento pertenece al estudiante' . $nombre .' '. $apellido. ' del ' . $ano_for . ' que se registro en fecha' . $fyh_creacion;
 
 // Image example with resizing
-
-
 $pdf->Image(
-    '../public/img/logoEdunexus-removebg-preview.png',
+    '../public2/imagenes/EdunexusImgComplete.png',
     165,
     10,
     25,
@@ -138,7 +128,7 @@ $pdf->Image(
     false
 );
 $pdf->Image(
-    'https://cdn.pixabay.com/photo/2021/10/06/05/17/learn-6684425_960_720.jpg',
+    'https://images.unsplash.com/photo-1504275107627-0c2ba7a43dba?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fHNjaG9vbHxlbnwwfHwwfHx8MA%3D%3D',
     10,
     230,
     190,
@@ -156,26 +146,6 @@ $pdf->Image(
 );
 
 
-// define barcode style
-$style2 = array(
-    'position' => '',
-    'align' => 'C',
-    'stretch' => false,
-    'fitwidth' => true,
-    'cellfitalign' => '',
-    'border' => false,
-    'hpadding' => 'auto',
-    'vpadding' => 'auto',
-    'fgcolor' => array(0, 0, 0),
-    'bgcolor' => false, //array(255,255,255),
-    'text' => true,
-    'font' => 'helvetica',
-    'fontsize' => 8,
-    'stretchtext' => 4
-);
-
-
-
 $html = '
 <br><br><br><br><br>
 <h2><p align="center"><u>Nombre de la institución educativa "Colegio Bogota Edunexus"</u> <br><br>
@@ -183,7 +153,7 @@ $html = '
 </p>    
 </h2>
 <br><br>
-<p align="justify" style="font-size: 13px;word-spacing: 5pt;line-height: 20pt;">Yo ' . $apellidos_nombres . ' con C.I.: ' . $ci . ', estudiante de ' . $ano_for . ' doy fe que los datos registrados y cargados en el sistema de matriculación son fidedignos para su correspondiente trámite.</p>
+<p align="justify" style="font-size: 13px;word-spacing: 5pt;line-height: 20pt;">Yo ' . $nombre .' ' . $apellido . ' con C.I.: ' . $ci . ', estudiante de ' . $ano_for . ' doy fe que los datos registrados y cargados en el sistema de matriculación son fidedignos para su correspondiente trámite.</p>
 
 <p align="rigth" style="font-size: 12px">Bogotá, Colombia, ' . $dia_actual . ' de ' . $mes . ' de ' . $ano . '</p>
 
@@ -194,7 +164,7 @@ $html = '
 </table>
 <p align="center">
 _____________________________________ <br>
-<b>' . $apellidos_nombres . '</b> <br>
+<b>' . $nombre .' ' . $apellido . '</b> <br>
 <b>C.I.:</b> ' . $ci . '
 </p>
 ';
@@ -215,3 +185,8 @@ $pdf->writeHTML($html, true, 0, true, 0);
 
 //Close and output PDF document
 $pdf->Output('Comprobante .pdf', 'I');
+?>
+
+
+
+

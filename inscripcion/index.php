@@ -67,10 +67,16 @@ include('../app/config.php');
                         <div class="card-body">
                             <form action="controller_create.php" method="post" enctype="multipart/form-data">
                                 <div class="row">
-                                    <div class="col-md-4">
+                                    <div class="col-md-2">
                                         <div class="form-group">
-                                            <label for="apellidos_nombres">Apellidos y Nombres (Mayúscula) </label>
-                                            <input type="text" name="apellidos_nombres" class="form-control" required>
+                                            <label for="nombre">Nombre</label>
+                                            <input type="text" name="nombre" class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label for="apellido">Apellido</label>
+                                            <input type="text" name="apellido" class="form-control" required>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
@@ -94,6 +100,15 @@ include('../app/config.php');
                                 </div>
                                 <br>
                                 <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="genero">Sexo</label>
+                                            <select name="genero" id="genero" class="form-control" required>
+                                                <option value="male">Masculino</option>
+                                                <option value="female">Femenino</option>
+                                            </select>
+                                        </div>
+                                    </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="ano_for">Año de Formación</label>
