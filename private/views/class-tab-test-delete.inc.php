@@ -18,11 +18,11 @@
 				</div>
 				<?php endif;?>
 			
-				<label>Test Name:</label>
-			 	<input readonly class="form-control" value="<?=get_var('test',$test_row->test)?>" type="text" name="test" placeholder="Text Title"><br>
+				<label>Nombre del test:</label>
+			 	<input readonly class="form-control" value="<?=get_var('test',$test_row->test)?>" type="text" name="test" placeholder="Título del test"><br>
 			 	
-			 	<label>Test Description:</label>
-			 	<textarea readonly name="description" class="form-control" placeholder="Add a description for this test"><?=get_var('description',$test_row->description)?></textarea>
+			 	<label>Descripcion del test:</label>
+			 	<textarea readonly name="description" class="form-control" placeholder="Añade una descripción para este test"><?=get_var('description',$test_row->description)?></textarea>
 			 	
 			 	<br>
 			  
@@ -34,7 +34,7 @@
 			 </form>
 
 			<?php else:?>
-				Sorry, that test was not found!<br><br><br>
+				Lo lamentamos, este test no fue encontrado!<br><br><br>
 
 				<a href="<?=ROOT?>/single_class/<?=$row->class_id?>?tab=tests">
 			 		<input class="btn btn-success" type="button" value="Back">

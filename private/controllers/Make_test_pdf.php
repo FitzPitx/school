@@ -110,16 +110,16 @@ class Make_test_pdf extends Controller
 						 	<td colspan="4" style="font-size:20px;text-align: center;">Test: <?=esc(ucwords($row->test))?></td>
 						</tr>
 						<tr>
-						 	<th>Class: </th><td><?=$row->class->class?></td>
-						 	<th>Student: </th><td><?=$student_row->firstname?> <?=$student_row->lastname?></td>
+						 	<th>Clase: </th><td><?=$row->class->class?></td>
+						 	<th>Estudiante: </th><td><?=$student_row->firstname?> <?=$student_row->lastname?></td>
 					 	</tr>
 						<tr>
-							<th>Created by:</th><td><?=esc($row->user->firstname)?> <?=esc($row->user->lastname)?></td>
-							<th>Date Created:</th><td><?=get_date($row->date)?></td>
+							<th>Creado por:</th><td><?=esc($row->user->firstname)?> <?=esc($row->user->lastname)?></td>
+							<th>Fecha de creación:</th><td><?=get_date($row->date)?></td>
 						</tr>
 						<tr>
 							<?php $active = $row->disabled ? "No":"Yes";?>
-							<td style="text-align: center;" colspan="4"><b>Test Description:</b><br><?=esc($row->description)?></td>
+							<td style="text-align: center;" colspan="4"><b>Descripción del test:</b><br><?=esc($row->description)?></td>
 						</tr>
 					</table>
 
@@ -129,19 +129,19 @@ class Make_test_pdf extends Controller
 						<?php $marked_percentage = get_mark_percentage($row->test_id,$user_id)?>
 
 						<div class="container-fluid text-center">
-							<span><?=$percentage?>% Answered | <?=$marked_percentage?>% Marked</span>
+							<span><?=$percentage?>% Contestado | <?=$marked_percentage?>% Marked</span>
  						</div>
 
 						<?php if($marked):?>
 						<center>
 							<?php $score_percentage = get_score_percentage($row->test_id,$user_id)?>
-							<small style="font-size:20px">Test Score:<br></small> <div style="font-size: 60px;margin-top: -10px;"><?=$score_percentage?>%</div>
+							<small style="font-size:20px">Puntaje:<br></small> <div style="font-size: 60px;margin-top: -10px;"><?=$score_percentage?>%</div>
 						</center>
 						<?php endif;?>
 
 						<nav class="navbar">
 							<center>
- 								<p><b>Total Questions:</b> <?=$total_questions?></p>
+ 								<p><b>Total de preguntas:</b> <?=$total_questions?></p>
 							</center>
 						 
 						</nav>
@@ -162,7 +162,7 @@ class Make_test_pdf extends Controller
 						 
 								<div>
 								  <div>
-								    <span>Question #<?=$num?></span>
+								    <span>Preguna #<?=$num?></span>
 								  </div>
 								  
 								  <div>
@@ -190,7 +190,7 @@ class Make_test_pdf extends Controller
 								    	?>
 
 								 
-								  				Teacher's mark:
+								  				Nota de profesor:
 								  				
 							    				<div style="font-size: 20px;float:right;">
 							    					<?=($mymark == 1) ? 'Correct':'Wrong'?>
@@ -199,9 +199,9 @@ class Make_test_pdf extends Controller
 								    	<?php endif;?>
 
 								    <?php if($question->question_type != 'multiple'):?>
-						  				<div>Student's answer: <?=$myanswer?></div>
+						  				<div>Respuesta del estudiante: <?=$myanswer?></div>
 						  				
-						  				Teacher's mark:
+						  				Nota del profesors:
 						  				
 										<div style="font-size: 20px;float:right;">
 											<?=($mymark == 1) ? 'Correct':'Wrong'?>

@@ -9,11 +9,11 @@
  
 
 			 <form method="post">
-			 	<h3>Edit Class</h3>
+			 	<h3>Editar clases</h3>
 
 			 	<?php if(count($errors) > 0):?>
 				<div class="alert alert-warning alert-dismissible fade show p-1" role="alert">
-				  <strong>Errors:</strong>
+				  <strong>Error:</strong>
 				   <?php foreach($errors as $error):?>
 				  	<br><?=$error?>
 				  <?php endforeach;?>
@@ -23,11 +23,11 @@
 				</div>
 				<?php endif;?>
 			
-			 	<input autofocus class="form-control" value="<?=get_var('class',$row[0]->class)?>" type="text" name="class" placeholder="Class Name"><br><br>
-			 	<input class="btn btn-primary float-end" type="submit" value="Save">
+			 	<input autofocus class="form-control" value="<?=get_var('class',$row[0]->class)?>" type="text" name="class" placeholder="Nombre de la clase"><br><br>
+			 	<input class="btn btn-primary float-end" type="submit" value="Guardar">
 
 			 	<a href="<?=ROOT?>/classes">
-			 		<input class="btn btn-danger" type="button" value="Cancel">
+			 		<input class="btn btn-danger" type="button" value="Cancelar">
 			 	</a>
 			 </form>
 			
@@ -35,11 +35,11 @@
 		<?php else: ?>
 
 			<div style="text-align: center;">
-				<h3>That class was not found!</h3>
+				<h3>Está clase no existe!</h3>
 				<div class="clearfix"></div>
 				<br><br>
 				<a href="<?=ROOT?>/classes">
-			 		<input class="btn btn-danger" type="button" value="Cancel">
+			 		<input class="btn btn-danger" type="button" value="Cancelar">
 			 	</a>
 		 	</div>
 		<?php endif; ?>

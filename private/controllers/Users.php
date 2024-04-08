@@ -34,7 +34,7 @@ class Users extends Controller
 		$data = $user->query($query,$arr);
 		
 		$crumbs[] = ['Panel principal',''];
-		$crumbs[] = ['staff','users'];
+		$crumbs[] = ['Personal','users'];
 
 		if(Auth::access('admin')){
 

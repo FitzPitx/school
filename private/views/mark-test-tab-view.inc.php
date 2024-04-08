@@ -16,11 +16,11 @@
 				<button class="btn mx-1 btn-danger float-end">Cancelar acción</button>
 			</a>
 			<a onclick="set_test_as_marked(event)" href="<?=ROOT?>/mark_test/<?=$row->test_id?>/<?=$answered_test_row->user_id?>/?set_marked=true">
-				<button class="btn mx-1 btn-secondary float-end">Marcar éxamen válido</button>
+				<button class="btn mx-1 btn-secondary float-end">Nota</button>
 			</a>
 			
 			<a onclick="auto_mark(event)" href="<?=ROOT?>/mark_test/<?=$row->test_id?>/<?=$answered_test_row->user_id?>/?auto_mark=true">
-				<button class="btn mx-1 btn-warning float-end">	Marca automáticak</button>
+				<button class="btn mx-1 btn-warning float-end">	Nota automática</button>
 			</a>
 			
 

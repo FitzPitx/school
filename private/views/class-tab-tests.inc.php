@@ -4,7 +4,7 @@
 	      <div class="input-group-prepend">
 	        <span class="input-group-text" id="basic-addon1"><i class="fa fa-search"></i>&nbsp</span>
 	      </div>
-	      <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1">
+	      <input type="text" class="form-control" placeholder="Buscar test..." aria-label="Search" aria-describedby="basic-addon1">
 	    </div>
 	  </form>
 			<a href="<?=ROOT?>/single_class/testadd/<?=$row->class_id?>?tab=test-add">
@@ -13,7 +13,7 @@
 	</nav>
 
 		<table class="table table-striped table-hover">
-		<tr><th></th><th>Test Name</th><th>Created by</th><th>Active</th><th>Taken</th><th>Date</th>
+		<tr><th></th><th>Nombre del test</th><th>Creado por</th><th>Activo</th><th>Tomado por</th><th>Fecha</th>
 			<th>
 				
 			</th>
@@ -51,7 +51,7 @@
 
  			<?php endforeach;?>
 			<?php else:?>
-				<tr><td colspan="6"><center>No tests were found at this time</center></td></tr>
+				<tr><td colspan="6"><center>No encontramos test por el momento</center></td></tr>
 			<?php endif;?>
 
 	</table>

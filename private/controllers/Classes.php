@@ -51,13 +51,11 @@ class Classes extends Controller
 	 			$query = "select classes.class, {$mytable}.* from $mytable join classes on classes.class_id = {$mytable}.class_id where ({$mytable}.user_id = :user_id && {$mytable}.disabled = 0 && classes.class like :find && year(classes.date) = :school_year ) ";
 	 			$arr['find'] = $find;
 	 		}
-
  			$data = $class->query($query,$arr);
- 
  		}
 
 		$crumbs[] = ['Panel principal',''];
-		$crumbs[] = ['Classes','classes'];
+		$crumbs[] = ['Clases','classes'];
 
 		$this->view('classes',[
 			'crumbs'=>$crumbs,
@@ -93,8 +91,8 @@ class Classes extends Controller
  		}
 
  		$crumbs[] = ['Panel principal',''];
-		$crumbs[] = ['Classes','classes'];
-		$crumbs[] = ['Add','classes/add'];
+		$crumbs[] = ['Clases','classes'];
+		$crumbs[] = ['Añadir','classes/add'];
 
 		$this->view('classes.add',[
 			'errors'=>$errors,
@@ -132,8 +130,8 @@ class Classes extends Controller
 
 
  		$crumbs[] = ['Panel principal',''];
-		$crumbs[] = ['Classes','classes'];
-		$crumbs[] = ['Edit','classes/edit'];
+		$crumbs[] = ['Clases','classes'];
+		$crumbs[] = ['Editar','classes/edit'];
 
 		if(Auth::access('lecturer') && Auth::i_own_content($row)){
 
@@ -171,8 +169,8 @@ class Classes extends Controller
 
 
  		$crumbs[] = ['Panel principal',''];
-		$crumbs[] = ['Classes','classes'];
-		$crumbs[] = ['Delete','classes/delete'];
+		$crumbs[] = ['Clases','classes'];
+		$crumbs[] = ['Eliminar','classes/delete'];
 
 		if(Auth::access('lecturer') && Auth::i_own_content($row)){
 

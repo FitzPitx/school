@@ -34,7 +34,7 @@ class Students extends Controller
 		$data = $user->query($query,$arr);
 
 		$crumbs[] = ['Panel principal',''];
-		$crumbs[] = ['students','students'];
+		$crumbs[] = ['Estudiantes','students'];
 
 		if(Auth::access('reception')){
 			$this->view('students',[

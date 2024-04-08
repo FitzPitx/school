@@ -2,8 +2,7 @@
 
 <div class="table-responsive container-fluid p-0" >
 	<table class="table table-striped table-hover">
-		<tr><th></th><th>Test Name</th><th>Created by</th><th>Active</th><th>Date</th>
-			<th>Answered</th>
+		<tr><th></th><th>Nombre del test</th><th>Creado por</th><th>Activo</th><th>Fecha</th><th>Respondido</th>
 			<th></th>
 		</tr>
 		<?php if(isset($test_rows) && $test_rows):?>
@@ -31,7 +30,7 @@
 				<td>
 			 		<?php if(can_take_test($test_row->test_id)):?>
 			 		<a href="<?=ROOT?>/take_test/<?=$test_row->test_id?>">
-			 		 <button class="btn btn-sm btn-primary">Take this test</button>
+			 		 <button class="btn btn-sm btn-primary">Hacer test</button>
 			 		</a>
 			 		<?php endif;?>
 
@@ -41,7 +40,7 @@
 
  			<?php endforeach;?>
 			<?php else:?>
-				<tr><td colspan="10"><center>No tests were found at this time</center></td></tr>
+				<tr><td colspan="10"><center>No encontramos test por el momento</center></td></tr>
 			<?php endif;?>
 
 	</table>

@@ -13,10 +13,10 @@
  
 			 	<input disabled autofocus class="form-control" value="<?=get_var('class',$row[0]->class)?>" type="text" name="class" placeholder="School Name"><br><br>
 			 	<input type="hidden" name="id">
-			 	<input class="btn btn-danger float-end" type="submit" value="Delete">
+			 	<input class="btn btn-danger float-end" type="submit" value="Eliminar">
 
 			 	<a href="<?=ROOT?>/classes">
-			 		<input class="btn btn-success" type="button" value="Cancel">
+			 		<input class="btn btn-success" type="button" value="Cancelar">
 			 	</a>
 			 </form>
 			
@@ -28,7 +28,7 @@
 				<div class="clearfix"></div>
 				<br><br>
 				<a href="<?=ROOT?>/classes">
-			 		<input class="btn btn-danger" type="button" value="Cancel">
+			 		<input class="btn btn-danger" type="button" value="Cancelar">
 			 	</a>
 		 	</div>
 		<?php endif; ?>
