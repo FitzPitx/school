@@ -80,13 +80,8 @@ VALUES ( :nombre, :apellido, :genero,:ci,:celular,:correo,:ano_for,:tipo_matricu
     $sentencia->bindParam(':documentos',$filename3);
     $sentencia->bindParam('fyh_creacion',$fechaHora);
     $sentencia->bindParam('estado',$estado_del_registro);
+    $sentencia->execute();
 
-    /*if($sentencia->execute()){
-        echo 'success';
-        //header('Location: comprobante.php?ci='.$ci );
-    }else{
-        echo 'error al registrar a la base de datos';
-    }*/
 
     //Inserción de datos a la tabla users del plataforma con default de rol "student" -> Estudiante
     //Preparara la sentencia
