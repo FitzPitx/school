@@ -1,9 +1,9 @@
 <form method="post" class="form mx-auto" style="width:100%;max-width: 400px;">
-	<br><h4>Add Student</h4>
+	<br><h4>Añadir estudiante</h4>
 
 	 	<?php if(count($errors) > 0):?>
 			<div class="alert alert-warning alert-dismissible fade show p-1" role="alert">
-			  <strong>Errors:</strong>
+			  <strong>Error:</strong>
 			   <?php foreach($errors as $error):?>
 			  	<br><?=$error?>
 			  <?php endforeach;?>
@@ -13,12 +13,12 @@
 			</div>
 		<?php endif;?>
 		
-	<input value="<?=get_var('name')?>" autofocus class="form-control" type="text" name="name" placeholder="Student Name">
+	<input value="<?=get_var('name')?>" autofocus class="form-control" type="text" name="name" placeholder="Nombre del estudiante">
 	<br>
 	<a href="<?=ROOT?>/single_class/<?=$row->class_id?>?tab=students">
-		<button type="button" class="btn btn-danger">Cancel</button>
+		<button type="button" class="btn btn-danger">Cancelar</button>
 	</a>
-	<button class="btn btn-primary float-end" name="search">Search</button>
+	<button class="btn btn-primary float-end" name="search">Buscar estudiante</button>
 	<div class="clearfix"></div>
 </form>
 <br>
@@ -34,7 +34,7 @@
 		<?php else:?>
 	 		
 	 		<?php if(count($_POST) > 0):?>
-	 			<center><hr><h4>No results were found</h4></center>
+	 			<center><hr><h4>No se encontraron estudiantes</h4></center>
 	 		<?php endif;?>
 	 	<?php endif;?>
 

@@ -13,10 +13,10 @@
 	  		<?php if(Auth::access('lecturer')):?>
 		 	
 			<a href="<?=ROOT?>/single_class/lectureradd/<?=$row->class_id?>?select=true">
-				<button class="btn btn-sm btn-primary"><i class="fa fa-plus"></i>Add New</button>
+				<button class="btn btn-sm btn-primary"><i class="fa fa-plus"></i>Añadir nuevo profesor</button>
 			</a>			
 			<a href="<?=ROOT?>/single_class/lecturerremove/<?=$row->class_id?>?select=true">
-				<button class="btn btn-sm btn-primary"><i class="fa fa-minus"></i>Remove</button>
+				<button class="btn btn-sm btn-primary"><i class="fa fa-minus"></i>Remover profesor</button>
 			</a>
  			<?php endif;?>
  			
@@ -35,7 +35,7 @@
 			?>
 		<?php endforeach;?>
 	<?php else:?>
-		<center><h4>No lecturers were found in this class</h4></center>
+		<center><h4>No se encontraron profesores para esta clase</h4></center>
 	<?php endif;?>
  </div>
  <?php $pager->display()?>

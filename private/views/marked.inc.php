@@ -2,9 +2,9 @@
 
 <div class="table-responsive container-fluid p-0" >
 	<table class="table table-striped table-hover">
-		<tr><th></th><th>Test Name</th><th>Student</th><th>Date Submitted</th><th>Marked by</th><th>Date Marked</th>
-			<th>Answered</th>
-			<th>Score</th>
+		<tr><th></th><th>Nombre del test</th><th>Estudiante</th><th>Fecha de subida</th><th>Calificado por</th><th>Fecha de calificación</th>
+			<th>Respondido</th>
+			<th>Puntaje</th>
 			<th></th>
 		</tr>
 		<?php if(isset($test_rows) && $test_rows):?>
@@ -44,7 +44,7 @@
 				<td>
 			  
 			 		<a href="<?=ROOT?>/marked_single/<?=$test_row->test_id?>/<?=$test_row->user->user_id?>">
-			 			<button class="btn btn-sm btn-primary">View <i class="fa fa-chevron-right"></i></button>
+			 			<button class="btn btn-sm btn-primary">Ver <i class="fa fa-chevron-right"></i></button>
 			 		</a>
 
 			 	</td>
@@ -53,7 +53,7 @@
 
  			<?php endforeach;?>
 			<?php else:?>
-				<tr><td colspan="10"><center>No tests were found at this time</center></td></tr>
+				<tr><td colspan="10"><center>No hay test por mostrar en el momento</center></td></tr>
 			<?php endif;?>
 
 	</table>

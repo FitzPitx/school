@@ -42,7 +42,7 @@
 		 			<h1 class="text-center">
 		 				<i class="fa fa-chalkboard-teacher"></i>
 		 			</h1>
-		 			<div class="card-footer">Vista al todo el personal.</div>
+		 			<div class="card-footer">Vista a todo el personal.</div>
 		 			</a>
 		 		</div>
 		 	<?php endif;?>

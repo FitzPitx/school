@@ -65,7 +65,7 @@
 
       <?php if(Auth::access('lecturer')):?>
         <li class="nav-item" style="position: relative;">
-          <a class="nav-link <?=($this->controller_name() == 'To_mark') ? ' active-nav ':''?> " href="<?=ROOT?>/to_mark">MARCAR
+          <a class="nav-link <?=($this->controller_name() == 'To_mark') ? ' active-nav ':''?> " href="<?=ROOT?>/to_mark">CALIFICAR
             <?php  
               $to_mark_count = (new Tests_model())->get_to_mark_count();
             ?>
@@ -76,7 +76,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link <?=($this->controller_name() == 'Marked') ? ' active-nav ':''?> " href="<?=ROOT?>/marked">MARCADO</a>
+          <a class="nav-link <?=($this->controller_name() == 'Marked') ? ' active-nav ':''?> " href="<?=ROOT?>/marked">CALIFICADO</a>
         </li>
       <?php endif;?>
       

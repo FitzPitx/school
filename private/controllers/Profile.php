@@ -20,7 +20,7 @@ class Profile extends Controller
 		$row = $user->first('user_id',$id);
 
 		$crumbs[] = ['Panel principal',''];
-		$crumbs[] = ['profile','profile'];
+		$crumbs[] = ['perfil','profile'];
 		if($row){
 			$crumbs[] = [$row->firstname,'profile'];
 		}

@@ -12,10 +12,10 @@
 	  		<?php if(Auth::access('lecturer')):?>
 	 
 			<a href="<?=ROOT?>/single_class/studentadd/<?=$row->class_id?>?select=true">
-				<button class="btn btn-sm btn-primary"><i class="fa fa-plus"></i>Add New</button>
+				<button class="btn btn-sm btn-primary"><i class="fa fa-plus"></i>Añadir alumno</button>
 			</a>			
 			<a href="<?=ROOT?>/single_class/studentremove/<?=$row->class_id?>?select=true">
-				<button class="btn btn-sm btn-primary"><i class="fa fa-minus"></i>Remove</button>
+				<button class="btn btn-sm btn-primary"><i class="fa fa-minus"></i>Eliminar alumno</button>
 			</a>
  			<?php endif;?>
  			
@@ -34,8 +34,8 @@
 			?>
 		<?php endforeach;?>
 
-	<?php else:?>
-		<center><h4>No students were found in this class</h4></center>
+	<?php else:?>	
+		<center><h4>No se encontraron estudiantes para esta clase</h4></center>
 	<?php endif;?>
 
  </div>

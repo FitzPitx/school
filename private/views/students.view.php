@@ -3,18 +3,18 @@
 	
 	<div class="container-fluid p-4 shadow mx-auto" style="max-width: 1000px;">
 		<?php $this->view('includes/crumbs',['crumbs'=>$crumbs])?>
-
+		<h5>Estudiantes</h5>
 		<nav class="navbar navbar-light bg-light">
 		  <form class="form-inline">
 		    <div class="input-group">
 		      <div class="input-group-prepend">
 		        <button class="input-group-text" id="basic-addon1"><i class="fa fa-search"></i>&nbsp</button>
 		      </div>
-		      <input name="find" value="<?=isset($_GET['find'])?$_GET['find']:'';?>" type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1">
+		      <input name="find" value="<?=isset($_GET['find'])?$_GET['find']:'';?>" type="text" class="form-control" placeholder="Buscar estudiante..." aria-label="Search" aria-describedby="basic-addon1">
 		    </div>
 		  </form>
  			<a href="<?=ROOT?>/signup?mode=students">
-				<button class="btn btn-sm btn-primary"><i class="fa fa-plus"></i>Add New</button>
+				<button class="btn btn-sm btn-primary"><i class="fa fa-plus"></i>Añadir nuevo estudiante</button>
 			</a>
  		</nav>
 
