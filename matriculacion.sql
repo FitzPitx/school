@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 08-04-2024 a las 03:43:24
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.1.17
+-- Host: 127.0.0.1
+-- Generation Time: Apr 08, 2024 at 06:32 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `matriculacion`
+-- Database: `matriculacion`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `answered_tests`
+-- Table structure for table `answered_tests`
 --
 
 CREATE TABLE `answered_tests` (
@@ -41,7 +41,7 @@ CREATE TABLE `answered_tests` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `answered_tests`
+-- Dumping data for table `answered_tests`
 --
 
 INSERT INTO `answered_tests` (`id`, `user_id`, `test_id`, `submitted`, `submitted_date`, `marked`, `marked_by`, `marked_date`, `score`, `date`) VALUES
@@ -56,7 +56,7 @@ INSERT INTO `answered_tests` (`id`, `user_id`, `test_id`, `submitted`, `submitte
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `answers`
+-- Table structure for table `answers`
 --
 
 CREATE TABLE `answers` (
@@ -71,7 +71,7 @@ CREATE TABLE `answers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `answers`
+-- Dumping data for table `answers`
 --
 
 INSERT INTO `answers` (`id`, `user_id`, `test_id`, `question_id`, `answer`, `date`, `answer_mark`, `answer_comment`) VALUES
@@ -111,7 +111,7 @@ INSERT INTO `answers` (`id`, `user_id`, `test_id`, `question_id`, `answer`, `dat
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `classes`
+-- Table structure for table `classes`
 --
 
 CREATE TABLE `classes` (
@@ -124,7 +124,7 @@ CREATE TABLE `classes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `classes`
+-- Dumping data for table `classes`
 --
 
 INSERT INTO `classes` (`id`, `class`, `user_id`, `school_id`, `class_id`, `date`) VALUES
@@ -136,7 +136,7 @@ INSERT INTO `classes` (`id`, `class`, `user_id`, `school_id`, `class_id`, `date`
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `class_lecturers`
+-- Table structure for table `class_lecturers`
 --
 
 CREATE TABLE `class_lecturers` (
@@ -149,7 +149,7 @@ CREATE TABLE `class_lecturers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `class_lecturers`
+-- Dumping data for table `class_lecturers`
 --
 
 INSERT INTO `class_lecturers` (`id`, `user_id`, `class_id`, `disabled`, `date`, `school_id`) VALUES
@@ -160,7 +160,7 @@ INSERT INTO `class_lecturers` (`id`, `user_id`, `class_id`, `disabled`, `date`, 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `class_students`
+-- Table structure for table `class_students`
 --
 
 CREATE TABLE `class_students` (
@@ -173,7 +173,7 @@ CREATE TABLE `class_students` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `class_students`
+-- Dumping data for table `class_students`
 --
 
 INSERT INTO `class_students` (`id`, `user_id`, `class_id`, `disabled`, `date`, `school_id`) VALUES
@@ -188,7 +188,7 @@ INSERT INTO `class_students` (`id`, `user_id`, `class_id`, `disabled`, `date`, `
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `class_tests`
+-- Table structure for table `class_tests`
 --
 
 CREATE TABLE `class_tests` (
@@ -204,7 +204,7 @@ CREATE TABLE `class_tests` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `schools`
+-- Table structure for table `schools`
 --
 
 CREATE TABLE `schools` (
@@ -216,7 +216,7 @@ CREATE TABLE `schools` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `schools`
+-- Dumping data for table `schools`
 --
 
 INSERT INTO `schools` (`id`, `school`, `school_id`, `date`, `user_id`) VALUES
@@ -227,34 +227,43 @@ INSERT INTO `schools` (`id`, `school`, `school_id`, `date`, `user_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tb_matriculacion`
+-- Table structure for table `tb_matriculacion`
 --
 
 CREATE TABLE `tb_matriculacion` (
   `id_matricula` int(11) NOT NULL,
-  `apellidos_nombres` varchar(255) DEFAULT NULL,
+  `nombre` varchar(255) NOT NULL,
+  `apellido` varchar(255) NOT NULL,
+  `genero` varchar(255) NOT NULL,
   `ci` varchar(255) DEFAULT NULL,
   `celular` varchar(255) DEFAULT NULL,
   `correo` varchar(255) DEFAULT NULL,
   `ano_for` varchar(255) DEFAULT NULL,
-  `especialidad` varchar(255) DEFAULT NULL,
   `tipo_matriculacion` varchar(255) DEFAULT NULL,
   `nro_deposito_matricual` varchar(255) DEFAULT NULL,
   `foto_deposito_matricula` text DEFAULT NULL,
   `documentos` text DEFAULT NULL,
   `fyh_creacion` datetime DEFAULT NULL,
-  `user_creacion` varchar(255) DEFAULT NULL,
-  `fyh_actualizacion` datetime DEFAULT NULL,
-  `user_actualizacion` varchar(255) DEFAULT NULL,
-  `fyh_eliminacion` datetime DEFAULT NULL,
-  `user_eliminacion` varchar(255) DEFAULT NULL,
   `estado` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `tb_matriculacion`
+--
+
+INSERT INTO `tb_matriculacion` (`id_matricula`, `nombre`, `apellido`, `genero`, `ci`, `celular`, `correo`, `ano_for`, `tipo_matriculacion`, `nro_deposito_matricual`, `foto_deposito_matricula`, `documentos`, `fyh_creacion`, `estado`) VALUES
+(3, 'Carlos', 'Nieto', 'male', '1004827433', '3216484089', 'canieto@uniempresarial.edu.co', 'PRIMERO', 'ESTUDIANTE REGULAR ( $1.000.000)', '23598329', '2024-04-07-10-02-58__wallpaperflare.com_wallpaper (2).jpg', '2024-04-07-10-02-58__wallpaperflare.com_wallpaper (2).jpg', '2024-04-07 10:02:58', '1'),
+(4, 'Carlos', 'Nieto', 'male', '1004827434', '3216484089', 'canieto@uniempresarial.edu.co', 'PRIMERO', 'ESTUDIANTE REGULAR ( $1.000.000)', '23598329', '2024-04-07-10-05-39__wallpaperflare.com_wallpaper (2).jpg', '2024-04-07-10-05-39__wallpaperflare.com_wallpaper (2).jpg', '2024-04-07 10:05:39', '1'),
+(5, 'Carlos', 'Nieto', 'male', '1004827435', '3216484089', 'canieto@uniempresarial.edu.co', 'PRIMERO', 'ESTUDIANTE REGULAR ( $1.000.000)', '23598329', '2024-04-07-10-14-52__wallpaperflare.com_wallpaper (2).jpg', '2024-04-07-10-14-52__wallpaperflare.com_wallpaper (2).jpg', '2024-04-07 10:14:52', '1'),
+(6, 'Carlos', 'Nieto', 'male', '1004827436', '3216484089', 'canieto@uniempresarial.edu.co', 'PRIMERO', 'ESTUDIANTE REGULAR ( $1.000.000)', '23598329', '2024-04-07-10-23-42__wallpaperflare.com_wallpaper (2).jpg', '2024-04-07-10-23-42__wallpaperflare.com_wallpaper (2).jpg', '2024-04-07 10:23:42', '1'),
+(7, 'Andres Felipe', 'Nieto Jimenez', 'male', '1004827454', '654654', 'nieto2013jimenez@gmail.com', 'PRIMERO', 'ESTUDIANTE REGULAR ( $1.000.000)', '23598329', '2024-04-07-10-26-12__wallpaperflare.com_wallpaper (2).jpg', '2024-04-07-10-26-12__wallpaperflare.com_wallpaper (2).jpg', '2024-04-07 10:26:12', '1'),
+(8, 'Andres Felipe', 'Nieto Jimenez', 'male', '1004827465', '654654', 'nieto2013jimenez@gmail.com', 'PRIMERO', 'ESTUDIANTE REGULAR ( $1.000.000)', '23598329', '2024-04-07-11-00-06__wallpaperflare.com_wallpaper (2).jpg', '2024-04-07-11-00-06__wallpaperflare.com_wallpaper (2).jpg', '2024-04-07 11:00:06', '1'),
+(9, 'Andres Felipe', 'Nieto Jimenez', 'male', '1004654654', '654654', 'nieto2013jimenez@gmail.com', 'PRIMERO', 'ESTUDIANTE REGULAR ( $1.000.000)', '23598329', '2024-04-07-11-07-17__wallpaperflare.com_wallpaper (2).jpg', '2024-04-07-11-07-17__wallpaperflare.com_wallpaper (2).jpg', '2024-04-07 11:07:17', '1');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tests`
+-- Table structure for table `tests`
 --
 
 CREATE TABLE `tests` (
@@ -271,7 +280,7 @@ CREATE TABLE `tests` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `tests`
+-- Dumping data for table `tests`
 --
 
 INSERT INTO `tests` (`id`, `test_id`, `class_id`, `school_id`, `user_id`, `test`, `description`, `date`, `disabled`, `editable`) VALUES
@@ -284,7 +293,7 @@ INSERT INTO `tests` (`id`, `test_id`, `class_id`, `school_id`, `user_id`, `test`
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `test_questions`
+-- Table structure for table `test_questions`
 --
 
 CREATE TABLE `test_questions` (
@@ -301,7 +310,7 @@ CREATE TABLE `test_questions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `test_questions`
+-- Dumping data for table `test_questions`
 --
 
 INSERT INTO `test_questions` (`id`, `test_id`, `question`, `comment`, `image`, `question_type`, `correct_answer`, `choices`, `date`, `user_id`) VALUES
@@ -329,7 +338,7 @@ INSERT INTO `test_questions` (`id`, `test_id`, `question`, `comment`, `image`, `
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -340,14 +349,14 @@ CREATE TABLE `users` (
   `date` datetime NOT NULL,
   `user_id` varchar(60) NOT NULL,
   `gender` varchar(6) NOT NULL,
-  `school_id` varchar(60) NOT NULL,
+  `school_id` varchar(60) DEFAULT '0PbzcOAALCLUytlGxNog9R3ZaG5rpvjeleQ3UHSWE81m00vLyqNGBEgK4waH',
   `rank` varchar(20) NOT NULL,
-  `password` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL DEFAULT '$2y$10$tk8F2m/X8g.Ilh432vXggeYBKF7EuyRiKpuXg1atYrup6JxyuezBm',
   `image` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `date`, `user_id`, `gender`, `school_id`, `rank`, `password`, `image`) VALUES
@@ -363,14 +372,21 @@ INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `date`, `user_id`, 
 (11, 'Carol', 'Jones', 'carol@yahoo.com', '2024-04-08 11:13:43', 'carol.jones', 'female', 'fOSajPRUvctvF1lqBXEkVfGtX3FKdjGS5DEoRRThJQc5XcM51u4TZV3Eo2br', 'admin', '$2y$10$OurQGUPBbsE0pU26VXqQ.eDcWQlLTfk0wY7c1mKaGJBSqMhoMS8Wu', ''),
 (12, 'Man', 'human', 'man@yahoo.com', '2024-04-08 11:14:40', 'man.human', 'male', 'fOSajPRUvctvF1lqBXEkVfGtX3FKdjGS5DEoRRThJQc5XcM51u4TZV3Eo2br', 'lecturer', '$2y$10$clmR.o.S4aW0m1WioJfu7e8K7UL7DCvtV0JfpKhvevXPtkRyjd4qa', ''),
 (13, 'student', 'banda', 'student@yahoo.com', '2024-04-08 11:23:42', 'student.banda', 'male', 'fOSajPRUvctvF1lqBXEkVfGtX3FKdjGS5DEoRRThJQc5XcM51u4TZV3Eo2br', 'student', '$2y$10$TYWC7aKoWyydXSG4EgA8retIIHXuZk1c1x9DwKazESKimK00mKBsG', ''),
-(14, 'female', 'banda', 'female@yahoo.com', '2024-04-08 11:24:13', 'female.banda', 'female', 'fOSajPRUvctvF1lqBXEkVfGtX3FKdjGS5DEoRRThJQc5XcM51u4TZV3Eo2br', 'student', '$2y$10$vLxIqkPkmkHv39mMZ4oSMOtfXM8IBrfYYQSOAlH0nE9gz5sTkilb2', '');
+(14, 'female', 'banda', 'female@yahoo.com', '2024-04-08 11:24:13', 'female.banda', 'female', 'fOSajPRUvctvF1lqBXEkVfGtX3FKdjGS5DEoRRThJQc5XcM51u4TZV3Eo2br', 'student', '$2y$10$vLxIqkPkmkHv39mMZ4oSMOtfXM8IBrfYYQSOAlH0nE9gz5sTkilb2', ''),
+(15, 'Carlos', 'Nieto', 'canieto@uniempresarial.edu.co', '2024-04-07 10:02:58', 'Carlos Nieto', 'studen', '1', '', 'password$!', ''),
+(16, 'Carlos', 'Nieto', 'canieto@uniempresarial.edu.co', '2024-04-07 10:05:39', 'Carlos.Nieto', 'male', '1', 'student', 'password$!', ''),
+(17, 'Carlos', 'Nieto', 'canieto@uniempresarial.edu.co', '2024-04-07 10:14:52', 'Carlos.Nieto', 'male', '0PbzcOAALCLUytlGxNog9R3ZaG5rpvjeleQ3UHSWE81m00vLyqNGBEgK4waH', 'student', '$2y$10$tk8F2m/X8g.Ilh432vXggeYBKF7EuyRiKpuXg1atYrup6JxyuezBm', ''),
+(18, 'Carlos', 'Nieto', 'canieto@uniempresarial.edu.co', '2024-04-07 10:23:42', 'Carlos.Nieto', 'male', '0PbzcOAALCLUytlGxNog9R3ZaG5rpvjeleQ3UHSWE81m00vLyqNGBEgK4waH', 'student', '$2y$10$tk8F2m/X8g.Ilh432vXggeYBKF7EuyRiKpuXg1atYrup6JxyuezBm', ''),
+(19, 'Andres Felipe', 'Nieto Jimenez', 'nieto2013jimenez@gmail.com', '2024-04-07 10:26:12', 'Andres Felipe.Nieto Jimenez', 'male', '0PbzcOAALCLUytlGxNog9R3ZaG5rpvjeleQ3UHSWE81m00vLyqNGBEgK4waH', 'student', '$2y$10$tk8F2m/X8g.Ilh432vXggeYBKF7EuyRiKpuXg1atYrup6JxyuezBm', ''),
+(20, 'Andres Felipe', 'Nieto Jimenez', 'nieto2013jimenez@gmail.com', '2024-04-07 11:00:06', 'Andres Felipe.Nieto Jimenez', 'male', '0PbzcOAALCLUytlGxNog9R3ZaG5rpvjeleQ3UHSWE81m00vLyqNGBEgK4waH', 'student', '$2y$10$tk8F2m/X8g.Ilh432vXggeYBKF7EuyRiKpuXg1atYrup6JxyuezBm', ''),
+(21, 'Andres Felipe', 'Nieto Jimenez', 'nieto2013jimenez@gmail.com', '2024-04-07 11:07:17', 'Andres Felipe.Nieto Jimenez', 'male', '0PbzcOAALCLUytlGxNog9R3ZaG5rpvjeleQ3UHSWE81m00vLyqNGBEgK4waH', 'student', '$2y$10$tk8F2m/X8g.Ilh432vXggeYBKF7EuyRiKpuXg1atYrup6JxyuezBm', '');
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `answered_tests`
+-- Indexes for table `answered_tests`
 --
 ALTER TABLE `answered_tests`
   ADD PRIMARY KEY (`id`),
@@ -383,7 +399,7 @@ ALTER TABLE `answered_tests`
   ADD KEY `score` (`score`);
 
 --
--- Indices de la tabla `answers`
+-- Indexes for table `answers`
 --
 ALTER TABLE `answers`
   ADD PRIMARY KEY (`id`),
@@ -394,7 +410,7 @@ ALTER TABLE `answers`
   ADD KEY `answer_mark` (`answer_mark`);
 
 --
--- Indices de la tabla `classes`
+-- Indexes for table `classes`
 --
 ALTER TABLE `classes`
   ADD PRIMARY KEY (`id`),
@@ -405,7 +421,7 @@ ALTER TABLE `classes`
   ADD KEY `class_id` (`class_id`);
 
 --
--- Indices de la tabla `class_lecturers`
+-- Indexes for table `class_lecturers`
 --
 ALTER TABLE `class_lecturers`
   ADD PRIMARY KEY (`id`),
@@ -416,7 +432,7 @@ ALTER TABLE `class_lecturers`
   ADD KEY `school_id` (`school_id`);
 
 --
--- Indices de la tabla `class_students`
+-- Indexes for table `class_students`
 --
 ALTER TABLE `class_students`
   ADD PRIMARY KEY (`id`),
@@ -427,7 +443,7 @@ ALTER TABLE `class_students`
   ADD KEY `school_id` (`school_id`);
 
 --
--- Indices de la tabla `class_tests`
+-- Indexes for table `class_tests`
 --
 ALTER TABLE `class_tests`
   ADD PRIMARY KEY (`id`),
@@ -439,7 +455,7 @@ ALTER TABLE `class_tests`
   ADD KEY `class_id` (`class_id`);
 
 --
--- Indices de la tabla `schools`
+-- Indexes for table `schools`
 --
 ALTER TABLE `schools`
   ADD PRIMARY KEY (`id`),
@@ -449,13 +465,13 @@ ALTER TABLE `schools`
   ADD KEY `user_url` (`user_id`);
 
 --
--- Indices de la tabla `tb_matriculacion`
+-- Indexes for table `tb_matriculacion`
 --
 ALTER TABLE `tb_matriculacion`
   ADD PRIMARY KEY (`id_matricula`);
 
 --
--- Indices de la tabla `tests`
+-- Indexes for table `tests`
 --
 ALTER TABLE `tests`
   ADD PRIMARY KEY (`id`),
@@ -469,7 +485,7 @@ ALTER TABLE `tests`
   ADD KEY `editable` (`editable`);
 
 --
--- Indices de la tabla `test_questions`
+-- Indexes for table `test_questions`
 --
 ALTER TABLE `test_questions`
   ADD PRIMARY KEY (`id`),
@@ -479,7 +495,7 @@ ALTER TABLE `test_questions`
   ADD KEY `user_id` (`user_id`);
 
 --
--- Indices de la tabla `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
@@ -493,74 +509,74 @@ ALTER TABLE `users`
   ADD KEY `email` (`email`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `answered_tests`
+-- AUTO_INCREMENT for table `answered_tests`
 --
 ALTER TABLE `answered_tests`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT de la tabla `answers`
+-- AUTO_INCREMENT for table `answers`
 --
 ALTER TABLE `answers`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
--- AUTO_INCREMENT de la tabla `classes`
+-- AUTO_INCREMENT for table `classes`
 --
 ALTER TABLE `classes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT de la tabla `class_lecturers`
+-- AUTO_INCREMENT for table `class_lecturers`
 --
 ALTER TABLE `class_lecturers`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de la tabla `class_students`
+-- AUTO_INCREMENT for table `class_students`
 --
 ALTER TABLE `class_students`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT de la tabla `class_tests`
+-- AUTO_INCREMENT for table `class_tests`
 --
 ALTER TABLE `class_tests`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `schools`
+-- AUTO_INCREMENT for table `schools`
 --
 ALTER TABLE `schools`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT de la tabla `tb_matriculacion`
+-- AUTO_INCREMENT for table `tb_matriculacion`
 --
 ALTER TABLE `tb_matriculacion`
-  MODIFY `id_matricula` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_matricula` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT de la tabla `tests`
+-- AUTO_INCREMENT for table `tests`
 --
 ALTER TABLE `tests`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT de la tabla `test_questions`
+-- AUTO_INCREMENT for table `test_questions`
 --
 ALTER TABLE `test_questions`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT de la tabla `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
