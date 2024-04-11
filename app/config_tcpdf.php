@@ -5,7 +5,7 @@
  * Date: 08/09/2020
  * Time: 20:08
  */
-
+global $pdo;
 define('SERVIDOR','localhost');
 define('USUARIO','root');
 define('PORT', '3306');

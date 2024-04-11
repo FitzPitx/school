@@ -11,8 +11,8 @@ include('../app/config_tcpdf.php');
 include('../app/TCPDF-master/tcpdf.php');
 header("Content-type:application/pdf");
 
-// create new PDF document
 $pdf = new TCPDF('P', 'mm', 'Letter', true, 'UTF-8', false);
+// create new PDF document
 $pdf->SetTitle('Matriculación al sistema estudiantil'); //Titulo del pdf
 $pdf->setPrintHeader(false); //No se imprime cabecera
 $pdf->setPrintFooter(false); //No se imprime pie de pagina
@@ -22,9 +22,7 @@ $pdf->SetAutoPageBreak(true, 0); //Se define un salto de pagina con un limite de
 // add a page
 $pdf->AddPage();
 
-
 $ci_estudiante = $_GET['ci'];
-
 $query_datos = $pdo->prepare("SELECT * FROM tb_matriculacion WHERE ci = '$ci_estudiante'  ");
 $query_datos->execute();
 $query_datos = $query_datos->fetchAll(PDO::FETCH_ASSOC);
@@ -36,13 +34,14 @@ foreach ($query_datos as $dato) {
     $celular = $dato['celular'];
     $correo = $dato['correo'];
     $ano_for = $dato['ano_for'];
-    // $especialidad = $dato['especialidad'];
     $tipo_matriculacion = $dato['tipo_matriculacion'];
     $nro_deposito_matricual = $dato['nro_deposito_matricual'];
     $foto_deposito_matricula = $dato['foto_deposito_matricula'];
     $documentos = $dato['documentos'];
     $fyh_creacion = $dato['fyh_creacion'];
+
 }
+
 
 date_default_timezone_set("America/Bogota");
 $fechaHora = date("Y-m-d H:i:s");
@@ -94,9 +93,6 @@ if ($mes == "12") {
 }
 
 
-
-
-//mestra <b>'.$ue.'</b>
 $style = array(
     'border' => 1,
     'vpadding' => '3',
@@ -107,8 +103,6 @@ $style = array(
     'module_height' => 1 // height of a single module in points
 );
 
-$QR = 'Este documento pertenece al estudiante' . $nombre .' '. $apellido. ' del ' . $ano_for . ' que se registro en fecha' . $fyh_creacion;
-
 // Image example with resizing
 $pdf->Image(
     '../public2/imagenes/EdunexusImgComplete.png',
@@ -116,7 +110,7 @@ $pdf->Image(
     10,
     25,
     30,
-    'JPG',
+    'PNG',
     true,
     150,
     '',
@@ -146,17 +140,16 @@ $pdf->Image(
 );
 
 
-$html = '
+$html = ' 
 <br><br><br><br><br>
-<h2><p align="center"><u>Nombre de la institución educativa "Colegio Bogota Edunexus"</u> <br><br>
+<h2><p align="center"><u>Nombre de la institución educativa "Colegio Bogota Edunexus"</u><br><br>
 <u>Sistema de Matriculación 1/2024</u>
-</p>    
+</p>
 </h2>
 <br><br>
 <p align="justify" style="font-size: 13px;word-spacing: 5pt;line-height: 20pt;">Yo ' . $nombre .' ' . $apellido . ' con C.I.: ' . $ci . ', estudiante de ' . $ano_for . ' doy fe que los datos registrados y cargados en el sistema de matriculación son fidedignos para su correspondiente trámite.</p>
 
 <p align="rigth" style="font-size: 12px">Bogotá, Colombia, ' . $dia_actual . ' de ' . $mes . ' de ' . $ano . '</p>
-
 <table>
 <tr>
 <td height="100px"></td>
@@ -166,26 +159,14 @@ $html = '
 _____________________________________ <br>
 <b>' . $nombre .' ' . $apellido . '</b> <br>
 <b>C.I.:</b> ' . $ci . '
-</p>
-';
-
+</p>';
 
 $pdf->SetFont('Helvetica', '', 10);
 $pdf->writeHTML($html, true, 0, true, 0);
-//$pdf->writeHTML($html, $linebreak = true, $fill = false, $reseth = true, $cell = false, $align = '');
 
-// write RAW 2D Barcode
-// QRCODE,L : QR-CODE Low error correction
-
-
-
-
-//$content = $pdf->Output('','S');
-//file_put_contents('comisionesPDF/Comision de '.$nombre.'.pdf',$content );
-
-//Close and output PDF document
 $pdf->Output('Comprobante .pdf', 'I');
-?>
+
+
 
 
 

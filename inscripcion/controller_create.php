@@ -54,17 +54,17 @@ border-radius: 5px;
     $nombre_de_foto_perfil = "".date('Y-m-d-h-i-s');
     $filename1 = $nombre_de_foto_perfil."__".$_FILES['foto_deposito_matricula']['name'];
     $location = "documentos/".$filename1;
-    move_uploaded_file($_FILES['foto_deposito_matricula']['tmp_name'],$location);
+    //move_uploaded_file($_FILES['foto_deposito_matricula']['tmp_name'],$location);
 
 //$documentos = $_POST['documentos'];
     $nombre_de_foto_perfil = "".date('Y-m-d-h-i-s');
     $filename3 = $nombre_de_foto_perfil."__".$_FILES['documentos']['name'];
     $location = "documentos/".$filename3;
-    move_uploaded_file($_FILES['documentos']['tmp_name'],$location);
+    //move_uploaded_file($_FILES['documentos']['tmp_name'],$location);
 
     $sentencia = $pdo->prepare('INSERT INTO tb_matriculacion
 (nombre, apellido, genero,ci,celular,correo,ano_for,tipo_matriculacion,nro_deposito_matricual,foto_deposito_matricula,documentos, fyh_creacion, estado)
-VALUES ( :nombre, :apellido, :genero,:ci,:celular,:correo,:ano_for,:tipo_matriculacion,:nro_deposito_matricual,:foto_deposito_matricula,:documentos,:fyh_creacion,:estado)');
+VALUES (:nombre,:apellido,:genero,:ci,:celular,:correo,:ano_for,:tipo_matriculacion,:nro_deposito_matricual,:foto_deposito_matricula,:documentos,:fyh_creacion,:estado)');
 
 
     $sentencia->bindParam(':nombre', $nombre);
