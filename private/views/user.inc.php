@@ -6,10 +6,10 @@
   <div class="card-body">
     <center><h5 class="card-title"><?=$row->firstname?> <?=$row->lastname?></h5></center>
     <center><p class="card-text"><?=str_replace("_", " ", $row->rank)?></p></center>
-    <a href="<?=ROOT?>/profile/<?=$row->user_id?>" class="btn btn-primary">Profile</a>
+    <a href="<?=ROOT?>/profile/<?=$row->user_id?>" class="btn btn-primary">Perfil</a>
     
     <?php if(isset($_GET['select'])):?>
-      <button name="selected" value="<?=$row->user_id?>" class="float-end btn btn-danger">Select</button>
+      <button name="selected" value="<?=$row->user_id?>" class="float-end btn btn-danger">Seleccionar</button>
     <?php endif;?>
 
   </div>

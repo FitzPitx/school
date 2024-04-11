@@ -1,6 +1,6 @@
 <?php if(is_object($question)):?>
 
-<center><h5>Delete Question</h5></center>
+<center><h5>Eliminar pregunta</h5></center>
 
 <form method="post" enctype="multipart/form-data">
 	
@@ -19,7 +19,7 @@
 	<label>Question:</label>
 	<textarea readonly class="form-control" name="question" placeholder="Type your question here"><?=get_var('question',$question->question)?></textarea>
 	<div class="input-group mb-3 pt-3">
-	  <label class="input-group-text" for="inputGroupFile01">Comment(optional)</label>
+	  <label class="input-group-text" for="inputGroupFile01">Comentario(opcional)</label>
 	  <input readonly type="text" name="comment" value="<?=get_var('comment',$question->comment)?>" class="form-control" placeholder="Comment">
 	</div>
  
@@ -33,12 +33,12 @@
 		<button type="button" class="btn btn-primary"><i class="fa fa-chevron-left"></i>Back</button>
 	</a>
 
-	<button class="btn btn-danger float-end">Delete</button>
+	<button class="btn btn-danger float-end">Eliminar</button>
 	<div></div>
 </form>
 
 <?php else:?>
-	Sorry that question was not found!
+	Lo lamentamos, esta pregunta no fue encontrada!
 	<br>
 	<a href="<?=ROOT?>/single_test/<?=$row->test_id?>">
 		<button type="button" class="btn btn-primary"><i class="fa fa-chevron-left"></i>Back</button>
