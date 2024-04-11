@@ -13,7 +13,6 @@ class Database
 		if(!$con = new PDO($string,DBUSER,DBPASS)){
 			die("could not connect to database");
 		}
-
 		return $con;
 	}
 

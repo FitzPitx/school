@@ -8,7 +8,7 @@
 	    </div>
 	  </form>
 			<a href="<?=ROOT?>/single_class/testadd/<?=$row->class_id?>?tab=test-add">
-				<button class="btn btn-sm btn-primary"><i class="fa fa-plus"></i>Add Test</button>
+				<button class="btn btn-sm btn-primary"><i class="fa fa-plus"></i>Añadir test</button>
 			</a> 
 	</nav>
 

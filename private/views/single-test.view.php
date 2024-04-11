@@ -10,15 +10,15 @@
 	 	<center><h4><?=esc(ucwords($row->test))?></h4></center>
 			<table class="table table-hover table-striped table-bordered">
 				<tr>
-					<th>Created by:</th><td><?=esc($row->user->firstname)?> <?=esc($row->user->lastname)?></td>
-					<th>Date Created:</th><td><?=get_date($row->date)?></td>
+					<th>Creado por:</th><td><?=esc($row->user->firstname)?> <?=esc($row->user->lastname)?></td>
+					<th>Fecha de creación:</th><td><?=get_date($row->date)?></td>
 					<td>
 						<a href="<?=ROOT?>/single_class/<?=$row->class_id?>?tab=tests">
-							<button class="btn btn-sm btn-primary"><i class="fa fa-chevron-right"></i>View class</button>
+							<button class="btn btn-sm btn-primary"><i class="fa fa-chevron-right"></i>Ver clases.</button>
 						</a>
 
 						<a href="<?=ROOT?>/single_test/<?=$row->test_id?>?tab=scores">
-							<button class="btn btn-sm btn-primary"><i class="fa fa-chevron-right"></i>Student scores</button>
+							<button class="btn btn-sm btn-primary"><i class="fa fa-chevron-right"></i>Puntaje de los estudiantes.</button>
 						</a>
 
 						
@@ -28,7 +28,7 @@
 				<?php $active = $row->disabled ? "No":"Yes";?>
 				<tr>
 					<td>
-						<b>Published:</b> <?=$active?><br>
+						<b>Publicado:</b> <?=$active?><br>
 
 						<?php 
 
@@ -44,7 +44,7 @@
 						</a>
 					</td>
 
-					<td colspan="5"><b>Test Description:</b><br><?=esc($row->description)?></td></tr>
+					<td colspan="5"><b>Descripción del test:</b><br><?=esc($row->description)?></td></tr>
 			</table>
  		</div>
  		 
@@ -96,7 +96,7 @@
 		 		?>
 		 
 		<?php else:?>
-			<center><h4>That test was not found!</h4></center>
+			<center><h4>Este test no fue encontrado!</h4></center>
 		<?php endif;?>
 
 	</div>

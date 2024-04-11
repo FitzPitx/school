@@ -27,7 +27,7 @@
 
 	 			<?php endforeach;?>
  			<?php else:?>
- 				<h4>No students were found at this time</h4>
+ 				<h4>No fue encontrado el estudiante.</h4>
  			<?php endif;?>
 		</div>
 
